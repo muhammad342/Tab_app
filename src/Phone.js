@@ -1,38 +1,55 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Form,Button } from 'react-bootstrap'
 import {useState} from 'react'
 import Loading from'./Loading'
 import {LinkContainer} from 'react-router-bootstrap'
+import { useHistory } from 'react-router'
+
 
 const Phone = () => {
+  let history=useHistory()
     const[Phone,setPhone]=useState();
     const[loading,setLoading]=useState(true);
     const HandleSubmit=(e)=>{
       e.preventDefault();
-     
-          setPhone(Phone)
-          setPhone('')
-          setLoading(false)
+     if(Phone){
+      setLoading(false) 
+      setPhone('')
       
+        setTimeout(()=>{
+        history.push('/Box')
+
+        },1000)
+      }
+     
+     else{
+       setLoading(true)
+       setPhone('')
+     }
+  
+          
+        }
         
-     
-      
-      
-    }
+    
+        
+ 
     return (
         <>
           <main >
      <h1 >Enter Phone Number</h1> 
-     <Form >
-     <Form.Control size="lg" type="text" placeholder="Phone number"  value={Phone} onChange={(e)=>{setPhone(e.target.value)}} />
+     <Form className='input' >
+       <div>
+     <Form.Control size="lg" type="text" placeholder="Phone number" value={Phone} onChange={(e)=>{setPhone(e.target.value)}} />
+     </div>
+  
+ 
+  
+     </Form>
+     <LinkContainer to='/Box'>
      <Button variant="primary" type="submit" onClick={HandleSubmit}>
     Submit
   </Button>
-  <LinkContainer to='/Image'>
-  <Button variant='primary' type='submit'>Next</Button>
   </LinkContainer>
-     </Form>
-    
      </main>
      <aricle className='loading'>
      <h1> {loading ? '' : <Loading/>}</h1>

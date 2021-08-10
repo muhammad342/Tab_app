@@ -15,9 +15,20 @@ main{
   text-align: center;
   min-height: 50vh;
 }
+
 .loading{
   text-align: center;
 }
 .img{
   height: 10rem;
+}
+.input{
+ display: flex !important;
+ justify-content: center !important;
+
+ margin-bottom: 2rem;
+}
+.box{
+  width: 5rem !important;
+  height: 5rem !important;
 }
