@@ -6,25 +6,25 @@ import {LinkContainer} from 'react-router-bootstrap'
 import { useHistory } from 'react-router'
 
 
-const Phone = () => {
+const Box = () => {
   let history=useHistory()
-    const[Phone,setPhone]=useState();
+    const[Box,setBox]=useState();
     const[loading,setLoading]=useState(true);
     const HandleSubmit=(e)=>{
       e.preventDefault();
-     if(Phone){
+     if(Box){
       setLoading(false) 
-      setPhone('')
+      setBox('')
       
         setTimeout(()=>{
-        history.push('/Box')
+        history.push('/Final')
 
         },1000)
      }
      
      else{
        setLoading(true)
-       setPhone('')
+       setBox('')
      }
   
           
@@ -36,16 +36,16 @@ const Phone = () => {
     return (
         <>
           <main >
-     <h1 >Enter Phone Number</h1> 
+     <h1 >Enter Number of Boxes</h1> 
      <Form className='input' >
        <div>
-     <Form.Control size="lg" type="text" placeholder="Phone number" value={Phone} onChange={(e)=>{setPhone(e.target.value)}} />
+     <Form.Control className='box' size="lg" type="text" placeholder="Box" value={Box} onChange={(e)=>{setBox(e.target.value)}} />
      </div>
   
  
   
      </Form>
-     <LinkContainer to='/Box'>
+     <LinkContainer to='/Final'>
      <Button variant="primary" type="submit" onClick={HandleSubmit}>
     Submit
   </Button>
@@ -58,4 +58,4 @@ const Phone = () => {
     )
 }
 
-export default Phone
+export default Box

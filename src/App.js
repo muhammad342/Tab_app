@@ -6,7 +6,7 @@ import Loading from'./Loading'
 import { BrowserRouter as  Router , Route} from 'react-router-dom'
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Phone from './Phone'
-import Picture from './Picture'
+import Box from './Box'
 import pic from './Assets/greentick1_4x.png'
 import pic1 from './Assets/greentick2_4x.png'
 import pic2 from './Assets/Packazoid_(4).png'
@@ -27,7 +27,7 @@ const App = () => {
    <Router>
     <Route path='/'   component={Header}/>
      <Route path='/'  component={Phone} exact/>
-     <Route path='/Picture' component={Picture}/>
+     <Route path='/Box' component={Box}/>
      <Route path='/Final' component={Final}/>
      
    </Router>
