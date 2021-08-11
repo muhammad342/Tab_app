@@ -17,10 +17,10 @@ const Phone = () => {
       setPhone('')
       
         setTimeout(()=>{
-        history.push('/Box')
+        history.push('/Picture')
 
         },1000)
-      }
+     }
      
      else{
        setLoading(true)
@@ -45,7 +45,7 @@ const Phone = () => {
  
   
      </Form>
-     <LinkContainer to='/Box'>
+     <LinkContainer to='/Picture'>
      <Button variant="primary" type="submit" onClick={HandleSubmit}>
     Submit
   </Button>
